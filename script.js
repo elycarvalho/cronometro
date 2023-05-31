@@ -10,6 +10,15 @@ const btnReset = document.getElementById('btn-reset')
 const btnVolta = document.getElementById('btn-volta')
 const qtdeVoltas = document.getElementById('qtde-voltas')
 const voltas = document.getElementById('voltas')
+const telaRegressiva = document.getElementById('tela-regress')
+const btnRegress = document.getElementById('btn-regress')
+const iniciaRegress = document.getElementById('inicia-regress')
+const stopRegress = document.getElementById('stop-regress')
+const resetRegress = document.getElementById('reset-regress')
+const minutoRegress = document.getElementById('minuto-regress')
+const segundoRegress = document.getElementById('segundo-regress')
+const decimoRegress = document.getElementById('decimo-regress')
+const btnCronometro = document.getElementById('btn-cronometro')
 let numVoltas = 0
 let Interval
 
@@ -37,6 +46,14 @@ btnVolta.addEventListener('click', () => {
   numVoltas++
   qtdeVoltas.innerHTML = `voltas: ${numVoltas}` 
   voltas.innerHTML += `${minuto} : ${segundo} : ${decimos}<br>`  
+})
+
+btnRegress.addEventListener('click', ()=>{
+	telaRegressiva.style.display = 'flex'
+})
+
+btnCronometro.addEventListener('click', ()=>{
+	telaRegressiva.style.display = 'none'
 })
 
 function startTime(){
