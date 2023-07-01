@@ -10,6 +10,7 @@ const btnReset = document.getElementById('btn-reset')
 const btnVolta = document.getElementById('btn-volta')
 const qtdeVoltas = document.getElementById('qtde-voltas')
 const voltas = document.getElementById('voltas')
+
 const telaRegressiva = document.getElementById('tela-regress')
 const btnRegress = document.getElementById('btn-regress')
 const iniciaRegress = document.getElementById('inicia-regress')
@@ -21,6 +22,7 @@ const decimoRegress = document.getElementById('decimo-regress')
 const btnCronometro = document.getElementById('btn-cronometro')
 let numVoltas = 0
 let Interval
+let intervalRegress
 
 btnIniciar.addEventListener('click', () => {
 	clearInterval(Interval)
@@ -83,4 +85,31 @@ function startTime(){
     	segundo = '00'
     	segundosSaida.innerHTML = segundo
     }
+}
+
+iniciaRegress.addEventListener('click', ()=>{
+	decimos = decimoRegress.value
+  clearInterval(intervalRegress)
+  intervalRegress = setInterval(startRegress, 1)
+})
+
+segundo = segundoRegress.value
+minuto = minutoRegress.value
+
+function startRegress(){
+	decimos--
+	if(decimos <= 0){
+		decimos = 99
+		segundo--
+		segundoRegress.value = segundo
+	}
+	if(segundo <= 0){
+    minuto--
+    segundo = 59
+    minutoRegress.value = minuto
+	}
+	if(decimos > 0){
+		console.log('decimos:' + decimos)
+    decimoRegress.value = decimos
+	}
 }
