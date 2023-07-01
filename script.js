@@ -90,7 +90,7 @@ function startTime(){
 iniciaRegress.addEventListener('click', ()=>{
 	decimos = decimoRegress.value
   clearInterval(intervalRegress)
-  intervalRegress = setInterval(startRegress, 1)
+  intervalRegress = setInterval(startRegress, 10)
 })
 
 segundo = segundoRegress.value
@@ -107,6 +107,9 @@ function startRegress(){
     minuto--
     segundo = 59
     minutoRegress.value = minuto
+	}
+	if(minuto === 0){
+		alert('tempo esgotado!')
 	}
 	if(decimos > 0){
 		console.log('decimos:' + decimos)
