@@ -8,7 +8,6 @@
 #main{
 	position: relative;
 	height: 490px;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,10 +33,14 @@
 	font-size: 2.9rem;
 	border: 5px solid #324749;
 	border-radius: 15px;
-	background-color: #E4F2F0;
+	background-color: #fff;
 }
 
-#btn-iniciar, #btn-stop, #btn-reset{
+.pontos{
+    font-size: 1.5rem;
+}
+
+.btn-iniciar, .btn-stop, .btn-reset{
 	font-weight: bold;
 	width: 70px;
 	border: none;
@@ -49,19 +52,20 @@
 	font-size: 1.8rem;
 }
 
-#btn-iniciar{
+.btn-iniciar{
 	color: #fff;
 	background-color: #1C7E10;
 	margin-right: 5px;
 	transform: rotate(45deg);
 }
 
-#btn-reset{
+.btn-reset{
+	background-color: #D7D7D7;
 	margin-left: 5px;
 	transform: rotate(-45deg);
 }
 
-#btn-stop{
+.btn-stop{
 	color: #fff;
 	background-color: #B80404;
 	position: relative;
@@ -103,6 +107,7 @@
 	text-align: center;
 	background-color: #0F352A;
 	border-radius: 10px;
+	border: 1px solid #000;
 }
 
 #tela-regress{
@@ -111,7 +116,7 @@
 	border-radius: 50%;
 	width: 280px;
 	height: 280px;
-	background-image: radial-gradient(lightcyan, lightgreen);
+	background-image: radial-gradient(lightgreen, #208A5F);
 	display: none;
 	flex-direction: column;
 	justify-content: space-around;
@@ -140,7 +145,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #208A5F;
+	background-color: #AAE4E4;
 }
 
 #tempo input{
@@ -151,5 +156,9 @@
 }
 
 #btn-cronometro{
+	height: 40px;
 	width: 90px;
+	border-radius: 15px;
+	background-image: radial-gradient(#134335, #011610);
+	color: #fff;
 }

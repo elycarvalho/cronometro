@@ -52,10 +52,22 @@ btnVolta.addEventListener('click', () => {
 
 btnRegress.addEventListener('click', ()=>{
 	telaRegressiva.style.display = 'flex'
+	btnVolta.style.backgroundColor = '#BBDBDE'
+	btnVolta.style.color = '#0F352A'
+	voltas.style.backgroundColor = '#BBDBDE'
+	voltas.style.color = '#0F352A'
+	qtdeVoltas.style.backgroundColor = '#BBDBDE'
+	qtdeVoltas.style.color = '#000'
 })
 
 btnCronometro.addEventListener('click', ()=>{
 	telaRegressiva.style.display = 'none'
+	btnVolta.style.backgroundColor = '#0F352A'
+	btnVolta.style.color = '#BBDBDE'
+	voltas.style.backgroundColor = '#0F352A'
+	voltas.style.color = '#BBDBDE'
+	qtdeVoltas.style.backgroundColor = '#0F352A'
+	qtdeVoltas.style.color = '#BBDBDE'
 })
 
 function startTime(){
@@ -87,14 +99,14 @@ function startTime(){
     }
 }
 
+
 iniciaRegress.addEventListener('click', ()=>{
 	decimos = decimoRegress.value
   clearInterval(intervalRegress)
-  intervalRegress = setInterval(startRegress, 10)
+  intervalRegress = setInterval(startRegress, 1)
 })
 
-segundo = segundoRegress.value
-minuto = minutoRegress.value
+let minutoR = minutoRegress.value
 
 function startRegress(){
 	decimos--
@@ -104,11 +116,11 @@ function startRegress(){
 		segundoRegress.value = segundo
 	}
 	if(segundo <= 0){
-    minuto--
+    minutoR--
     segundo = 59
-    minutoRegress.value = minuto
+    minutoRegress.value = minutoR
 	}
-	if(minuto === 0){
+	if(minutoR === 0){
 		alert('tempo esgotado!')
 	}
 	if(decimos > 0){
@@ -116,3 +128,14 @@ function startRegress(){
     decimoRegress.value = decimos
 	}
 }
+
+stopRegress.addEventListener('click', ()=>{
+	clearInterval(intervalRegress)
+})
+
+resetRegress.addEventListener('click', ()=>{
+	clearInterval(intervalRegress)
+	decimoRegress.value = 59
+	segundoRegress.value = 59
+	minutoRegress.value = 59
+})
