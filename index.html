@@ -7,31 +7,18 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div id="main">
+  <main>
     <div id="btn-volta">Voltas</div>
-    
-    <div id="container">  
+    <div id="container">
       <p><span id="minutos">00</span><span>:</span><span id="segundos">00</span><span id="decimos">00</span></p>
-      <button class="btn-iniciar" id="btn-iniciar">Iniciar</button>
-      <button class="btn-stop" id="btn-stop">Parar</button>
-      <button class="btn-reset" id="btn-reset">Reset</button>
-      <button id="btn-regress">contagem regressiva</button>
+      <button id="btn-iniciar">Iniciar</button>
+      <button id="btn-stop">Parar</button>
+      <button id="btn-reset">Zerar</button>
     </div>
+    
     <div id="qtde-voltas"></div>
     <div id="voltas"></div>
-
-    <div id="tela-regress">
-      <div id="tempo">
-        <input id="minuto-regress" maxlength="2" value="59"><span class="pontos">:</span><input id="segundo-regress" maxlength="2" value="59"><span class="pontos">:</span><input id="decimo-regress" maxlength="2" value="99">
-      </div>
-      <div id="botoes-regress">
-        <button class="btn-iniciar" id="inicia-regress">Iniciar</button>
-        <button class="btn-stop" id="stop-regress">Parar</button>
-        <button class="btn-reset" id="reset-regress">Reset</button>
-      </div>
-      <button id="btn-cronometro">cronômetro</button>
-    </div>
-  </div> 
+  </main> 
   
   <script src="script.js"></script>
 </body>

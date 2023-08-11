@@ -10,19 +10,8 @@ const btnReset = document.getElementById('btn-reset')
 const btnVolta = document.getElementById('btn-volta')
 const qtdeVoltas = document.getElementById('qtde-voltas')
 const voltas = document.getElementById('voltas')
-
-const telaRegressiva = document.getElementById('tela-regress')
-const btnRegress = document.getElementById('btn-regress')
-const iniciaRegress = document.getElementById('inicia-regress')
-const stopRegress = document.getElementById('stop-regress')
-const resetRegress = document.getElementById('reset-regress')
-const minutoRegress = document.getElementById('minuto-regress')
-const segundoRegress = document.getElementById('segundo-regress')
-const decimoRegress = document.getElementById('decimo-regress')
-const btnCronometro = document.getElementById('btn-cronometro')
 let numVoltas = 0
 let Interval
-let intervalRegress
 
 btnIniciar.addEventListener('click', () => {
 	clearInterval(Interval)
@@ -41,33 +30,15 @@ btnReset.addEventListener('click', () => {
 	segundosSaida.innerHTML = segundo
 	decimosSaida.innerHTML = decimos
 	minutosSaida.innerHTML = minuto
-   console.log(Interval)
+	voltas.innerHTML = ''
+	numVoltas = 0
+	qtdeVoltas.innerHTML = ''
 })
 
 btnVolta.addEventListener('click', () => {
   numVoltas++
   qtdeVoltas.innerHTML = `voltas: ${numVoltas}` 
   voltas.innerHTML += `${minuto} : ${segundo} : ${decimos}<br>`  
-})
-
-btnRegress.addEventListener('click', ()=>{
-	telaRegressiva.style.display = 'flex'
-	btnVolta.style.backgroundColor = '#BBDBDE'
-	btnVolta.style.color = '#0F352A'
-	voltas.style.backgroundColor = '#BBDBDE'
-	voltas.style.color = '#0F352A'
-	qtdeVoltas.style.backgroundColor = '#BBDBDE'
-	qtdeVoltas.style.color = '#000'
-})
-
-btnCronometro.addEventListener('click', ()=>{
-	telaRegressiva.style.display = 'none'
-	btnVolta.style.backgroundColor = '#0F352A'
-	btnVolta.style.color = '#BBDBDE'
-	voltas.style.backgroundColor = '#0F352A'
-	voltas.style.color = '#BBDBDE'
-	qtdeVoltas.style.backgroundColor = '#0F352A'
-	qtdeVoltas.style.color = '#BBDBDE'
 })
 
 function startTime(){
@@ -98,44 +69,3 @@ function startTime(){
     	segundosSaida.innerHTML = segundo
     }
 }
-
-
-iniciaRegress.addEventListener('click', ()=>{
-	decimos = decimoRegress.value
-  clearInterval(intervalRegress)
-  intervalRegress = setInterval(startRegress, 1)
-})
-
-let minutoR = minutoRegress.value
-
-function startRegress(){
-	decimos--
-	if(decimos <= 0){
-		decimos = 99
-		segundo--
-		segundoRegress.value = segundo
-	}
-	if(segundo <= 0){
-    minutoR--
-    segundo = 59
-    minutoRegress.value = minutoR
-	}
-	if(minutoR === 0){
-		alert('tempo esgotado!')
-	}
-	if(decimos > 0){
-		console.log('decimos:' + decimos)
-    decimoRegress.value = decimos
-	}
-}
-
-stopRegress.addEventListener('click', ()=>{
-	clearInterval(intervalRegress)
-})
-
-resetRegress.addEventListener('click', ()=>{
-	clearInterval(intervalRegress)
-	decimoRegress.value = 59
-	segundoRegress.value = 59
-	minutoRegress.value = 59
-})
